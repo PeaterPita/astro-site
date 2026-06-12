@@ -7,5 +7,5 @@ steps:
     image: bash
     commands:
       - nix develop
-        "npm install"
-        "npm run build"
+      - "npm install"
+      - "npm run build"
