@@ -3,13 +3,7 @@ when:
     branch: master
 
 steps:
-  - name: build
-    image: bash
-    commands:
-      - nix develop --command bash -c "npm install && npm run build && echo fin"
-
   - name: deploy
     image: bash
     commands:
-      - rm -rf /var/www/portfolio2/*
-      - cp -r dist/* /var/www/portfolio2/
+      - nix build .#default -o /var/www/portfolio
