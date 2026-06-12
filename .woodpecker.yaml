@@ -1,0 +1,8 @@
+when:
+  - event: push
+    branch: main
+
+steps:
+  - name: build
+    commands:
+      - nix develop --command bash -c "npm install && npm run build"
